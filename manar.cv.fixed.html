@@ -28,8 +28,11 @@
       background:linear-gradient(180deg, var(--bg), #0b1226 50%, #0a1021 100%);
       color:var(--text);
       line-height:1.4;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
     }
-    .container{max-width:1000px;margin:auto;padding:20px}
+    .container{max-width:1000px;margin:auto;padding:20px;flex:1}
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid var(--line);
@@ -131,6 +134,42 @@
     }
     .tag:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
 
+    /* الفوتر */
+    footer{
+      margin-top:40px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,0.02);
+      padding:18px 10px;
+      font-size:11px;
+      color:var(--muted);
+      position:sticky;
+      bottom:0;
+      left:0;
+      width:100%;
+    }
+    .footer-container{
+      max-width:1000px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+    .footer-links{
+      display:flex;
+      gap:15px;
+    }
+    .footer-links a{
+      color:var(--muted);
+      text-decoration:none;
+      transition:.2s;
+      font-weight:500;
+    }
+    .footer-links a:hover{
+      color:var(--accent);
+      text-decoration:underline;
+    }
+
     @media print{
       body{background:#fff;color:#111}
       .container{padding:0}
@@ -138,6 +177,7 @@
       .printbar{display:none}
       .chip, .tag{background:#f6f7fb;color:#111;border-color:#e5e7eb}
       a{color:#111;text-decoration:none}
+      footer{display:none}
     }
   </style>
 </head>
@@ -221,9 +261,17 @@
       </div>
     </div>
   </div>
-</body>
+
+  <!-- الفوتر -->
   <footer>
-   <p>© 2025 جميع الحقوق محفوظة</p>
-   <a href="#">تواصل معنا</a>
-</footer>
+    <div class="footer-container">
+      <p>© 2025 منار عصام عبدالعليم القباطي — جميع الحقوق محفوظة</p>
+      <div class="footer-links">
+        <a href="#">الرئيسية</a>
+        <a href="#">عنّي</a>
+        <a href="#">تواصل</a>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
